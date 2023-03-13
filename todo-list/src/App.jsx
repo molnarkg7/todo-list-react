@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Form from "./components/form/Form";
 import List from "./components/list/List";
+import "../src/App.css";
 
 function App() {
   const [todos, setTodos] = useState([]);

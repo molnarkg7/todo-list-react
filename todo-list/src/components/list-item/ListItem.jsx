@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Dropdown from "../dropdown/Dropdown";
+import "../list-item/ListItem.css";
 
 const ListItem = ({ todo, toggleComplete, onRemoveTodo, editTodo }) => {
   const [isEditOn, setIsEditOn] = useState(false);

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
+import "../dropdown/Dropdown.css";
 
 const Dropdown = ({ icon, options, setOptions }) => {
   const [isOpen, setIsOpen] = useState(false);
