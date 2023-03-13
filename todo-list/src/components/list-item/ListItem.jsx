@@ -19,7 +19,7 @@ const ListItem = ({ todo, toggleComplete, onRemoveTodo, editTodo }) => {
     editTodo(text);
   };
 
-  const dropdownOptions = [
+  const [dropdownOptions, setDropdownOptions] = React.useState([
     {
       value: "Delete",
       onClick: onDelete,
@@ -30,7 +30,7 @@ const ListItem = ({ todo, toggleComplete, onRemoveTodo, editTodo }) => {
       onClick: onEdit,
       color: "blue",
     },
-  ];
+  ]);
 
   return (
     <li className={todo.complete ? "todo-row completed" : "todo-row"}>
@@ -51,7 +51,7 @@ const ListItem = ({ todo, toggleComplete, onRemoveTodo, editTodo }) => {
           todo.text
         )}
       </label>
-      <Dropdown options={dropdownOptions} />
+      <Dropdown options={dropdownOptions} setOptions={setIsEditOn} />
     </li>
   );
 };

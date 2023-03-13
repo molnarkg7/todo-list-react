@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 
-const Dropdown = ({ icon, options }) => {
+const Dropdown = ({ icon, options, setOptions }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -20,8 +20,14 @@ const Dropdown = ({ icon, options }) => {
               <button
                 onClick={
                   option.value === "Edit"
-                    ? () => setIsOpen(false)
-                    : () => option.onClick()
+                    ? () => {
+                        setIsOpen(true);
+                        setOptions(true);
+                      }
+                    : () => {
+                        option.onClick();
+                        setOptions(false);
+                      }
                 }
                 className={`${option.color} dropdown-list-btn`}
               >
